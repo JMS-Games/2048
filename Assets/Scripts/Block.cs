@@ -32,10 +32,10 @@ public class Block : MonoBehaviour
         curNum.text = startNum.ToString();
         isMove = false;
         isLive = true;
-        StartCoroutine(OpenAni());
+        StartCoroutine(OpenAnim());
     }
 
-    IEnumerator OpenAni()
+    IEnumerator OpenAnim()
     {
         transform.localScale = Vector3.zero;
         Vector3 addVec = new Vector3(0.1f, 0.1f, 0.1f);
@@ -72,6 +72,8 @@ public class Block : MonoBehaviour
             }
             GameManager.instance.SetScore(newScore);
         }
+
+        // todo Merging effect anim??
     }
 
     void FixedUpdate()

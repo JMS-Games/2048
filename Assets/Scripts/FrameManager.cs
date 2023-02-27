@@ -24,7 +24,7 @@ public class FrameManager : MonoBehaviour
     private bool isHot = false;
     private IEnumerator GenBlock()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         Random.InitState((int)System.DateTime.Now.Ticks);
         int count = isHot ? Random.Range(0, remainCount < 4 ? remainCount + 1 : 4) : 4;
         for (int i = 0; i < count; i++)
@@ -49,6 +49,7 @@ public class FrameManager : MonoBehaviour
                 }
             }
         }
+        yield return new WaitForSeconds(0.1f);
         isHot = false;
     }
 
